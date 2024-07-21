@@ -32,6 +32,15 @@ a {
     }
 }
 /*Main styles*/
+.content {
+    padding 0 $main_shift $main_shift
+    max-width: 1460px
+    margin 0 auto    
+
+    p{
+        margin-bottom 1.3em
+    }
+}
 .cover-space {
     padding-bottom 82%
     // 1573*100/1920=82% 1920-ширина, 1573-высота
@@ -180,7 +189,23 @@ a {
         }
     }
 }
+.main-title_small {
+    font-size 1rem
+    margin-bottom 1.8em
 
+    .main-title__summary {
+        color: $main_highlite    
+
+        &::before  {
+            background: $main_highlite
+        }
+    }
+
+    .main-title__text {
+        font-size 3.4em
+        line-height 1.4    
+    }
+}
 .social-networks {
     position: absolute
     left: 0
@@ -204,6 +229,52 @@ a {
     }
 }
 
+.scroll-down {
+    display flex
+    justify-content center
+    align-items: center
+    cursor: pointer
+    opacity 1
+    transition: 0.3s
+
+    &:hover {
+        opacity 0.7    
+    }
+
+    &__icon {
+        margin: 0.2em 0 0 0.5em    
+    }
+
+}
+
+.section-cols {
+    display flex
+    justify-content space-between
+    align-items: center    
+}
+.section-col {
+    &:first-child {
+        width 40%
+    }
+    &:last-child {
+        width 44%    
+    }    
+    &__image {
+        width 100%
+    }
+}
+.arrow-link {
+    text-decoration none
+    display flex
+    align-items center
+    
+
+     &__icon {
+        margin 0.2rem 0 0 0.4rem   
+    }    
+}
+
+
 /* Icons*/
 
 .icon__instagram {
@@ -224,28 +295,56 @@ a {
     background: url("/images/icons/twitter.svg") no-repeat center center
     background-size: contain
 }
-.icon__arrow-downward {
+.icon__arrow_downward {
     width 0.9rem
     height 1.3rem
     background: url("/images/icons/arrow_downward.svg") no-repeat center center 
     background-size: contain
 }
 
+.icon__arrow_rightward {
+    width 1.4rem
+    height 0.9rem
+    background: url("/images/icons/arrow_rightward.svg") no-repeat center center 
+    background-size: contain
+}
 
-.scroll-down {
-    display flex
-    justify-content center
-    align-items: center
-    cursor: pointer
-    opacity 1
-    transition: 0.3s
 
-    &:hover {
-        opacity 0.7    
+@media screen and (max-width: 1790px) {
+    html,
+    body {
+        font-size: 16px;
     }
-
-    &__icon {
-        margin: 0.2em 0 0 0.5em    
+    .section-col {
+        &:first-child {
+            width: 40%;
+        }
+        &:last-child {
+            width: 50%;
+        }
     }
-
+    .content {
+        max-width: 1200px;
+    }
+}
+@media screen and (max-width: 1550px) {
+    html,
+    body {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 1380px) {
+    .section-col {
+        &:first-child {
+            width: 43%;
+        }
+        &:last-child {
+            width: 50%;
+        }
+    }
+}
+@media screen and (max-width: 1380px) {
+    .main-title {
+        font-size 0.9rem    
+    }
 }
